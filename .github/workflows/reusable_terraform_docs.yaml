@@ -22,7 +22,7 @@ jobs:
   terraform-docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1, released 2025-12, checked 2026-01
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2, released 2026-01, checked 2026-03
       - uses: ulfiac/common-reusables/.github/actions/dump_context@main
       - uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1, released 2025-05, checked 2026-01
         with:
