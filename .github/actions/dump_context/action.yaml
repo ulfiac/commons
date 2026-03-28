@@ -35,10 +35,10 @@ inputs:
     default: true
     description: "Whether to dump matrix context"
     required: false
-  needs:
-    default: false
-    description: "Whether to dump needs context"
-    required: false
+  # needs:
+  #   default: false
+  #   description: "Whether to dump needs context"
+  #   required: false
   runner:
     default: true
     description: "Whether to dump runner context"
@@ -98,11 +98,11 @@ runs:
           echo "::endgroup::"
         fi
 
-        if [ "${{ inputs.needs }}" = "true" ]; then
-          echo "::group::needs context:"
-          echo "${{ toJson(needs) }}"
-          echo "::endgroup::"
-        fi
+        # if [ "${{ inputs.needs }}" = "true" ]; then
+        #   echo "::group::needs context:"
+        #   echo "${{ toJson(needs) }}"
+        #   echo "::endgroup::"
+        # fi
 
         if [ "${{ inputs.runner }}" = "true" ]; then
           echo "::group::runner context:"
