@@ -1,7 +1,7 @@
-# Copilot Instructions for common-reusables
+# Copilot Instructions for commons
 
 ## Repository Overview
-This repository, `common-reusables`, serves as a centralized hub for reusable GitHub Actions workflows. It provides standardized, maintainable CI/CD components that can be shared across multiple repositories within the ulfiac organization.
+This repository, `commons`, serves as a centralized hub for reusable GitHub Actions workflows. It provides standardized, maintainable CI/CD components that can be shared across multiple repositories within the ulfiac organization.
 
 ## Key Components
 - **Reusable Workflows**: Located in `.github/workflows/`, these are designed to be called from other repositories using `workflow_call`.
@@ -30,10 +30,10 @@ This repository is used by several other repositories in the workspace as a shar
 Other repositories reference these workflows using:
 ```yaml
 # Linting workflow
-uses: ulfiac/common-reusables/.github/workflows/reusable_linter.yaml@main
+uses: ulfiac/commons/.github/workflows/reusable_linter.yaml@main
 
 # Log purge workflow
-uses: ulfiac/common-reusables/.github/workflows/reusable_purge_workflow_logs.yaml@main
+uses: ulfiac/commons/.github/workflows/reusable_purge_workflow_logs.yaml@main
 with:
   retain-days: 7
 ```

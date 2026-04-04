@@ -137,7 +137,7 @@ jobs:
       - *checkout_action
       - uses: terraform-linters/tflint-load-config-action@32d9f74138340b95873e956fbdfc390db819bff1 # v3.0.0, released 2026-03, checked 2026-03
         with:
-          source-repo: ulfiac/common-reusables
+          source-repo: ulfiac/commons
           source-path: .tflint.hcl
           source-ref: main
       - uses: terraform-linters/setup-tflint@b480b8fcdaa6f2c577f8e4fa799e89e756bb7c93 # v6.2.2, released 2026-03, checked 2026-03
