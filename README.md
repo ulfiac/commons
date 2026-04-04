@@ -1,4 +1,4 @@
-# common-reusables
+# commons
 
 This repository serves as a centralized hub for reusable GitHub Actions workflows within the ulfiac organization. It provides standardized, maintainable CI/CD components that ensure consistency across multiple repositories.
 
@@ -46,7 +46,7 @@ permissions:
 
 jobs:
   reusable-linter:
-    uses: ulfiac/common-reusables/.github/workflows/reusable_linter.yaml@main
+    uses: ulfiac/commons/.github/workflows/reusable_linter.yaml@main
     with:
       shellcheck: false
 ```
@@ -88,7 +88,7 @@ permissions:
 
 jobs:
   purge-logs:
-    uses: ulfiac/common-reusables/.github/workflows/reusable_purge_workflow_logs.yaml@main
+    uses: ulfiac/commons/.github/workflows/reusable_purge_workflow_logs.yaml@main
     with:
       retain-days: 7
 ```
