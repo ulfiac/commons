@@ -22,6 +22,7 @@ A comprehensive linting workflow that performs multiple code quality checks. Thi
 |-------|------|---------|-------------|
 | `actionlint` | boolean | `true` | Enable GitHub Actions workflow linting |
 | `shellcheck` | boolean | `true` | Enable shell script linting |
+| `terraform-docs` | boolean | `false` | Enable Terraform documentation validation (checks for drift) |
 | `terraform-fmt` | boolean | `true` | Enable Terraform formatting validation |
 | `terragrunt-hcl-fmt` | boolean | `true` | Enable HCL formatting validation using Terragrunt |
 | `tflint` | boolean | `true` | Enable Terraform static analysis |
@@ -93,7 +94,78 @@ jobs:
       retain-days: 7
 ```
 
-This example runs the purge workflow weekly and retains logs for 7 days.
+This example runs the purge workflow daily and retains logs for 7 days.
+
+### reusable_terraform_docs.yaml
+
+Automatically generates and commits Terraform module documentation using [terraform-docs](https://terraform-docs.io/). When triggered, it scans a directory for Terraform modules and pushes updated `README.md` files directly to the branch.
+
+#### Inputs
+
+| Input | Type | Default | Description |
+|-------|------|---------|-------------|
+| `find-dir` | string | `terraform/modules` | Root directory to recursively search for Terraform modules |
+
+#### Permissions Required
+
+This workflow requires `contents: write` and `pull-requests: write` permissions to commit generated documentation.
+
+#### Usage Example
+
+To use this workflow in another repository, add the following to your `.github/workflows/terraform-docs.yaml`:
+
+```yaml
+name: terraform docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'terraform/modules/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  terraform-docs:
+    uses: ulfiac/commons/.github/workflows/reusable_terraform_docs.yaml@main
+    with:
+      find-dir: terraform/modules
+```
+
+## Composite Actions
+
+### dump_context
+
+A composite action for debugging reusable workflows. Dumps GitHub Actions context objects (env, github, inputs, job, matrix, runner, steps, strategy, vars) as grouped log output to help diagnose workflow issues.
+
+#### Inputs
+
+| Input | Type | Default | Description |
+|-------|------|---------|-------------|
+| `annotate` | boolean | `false` | Add a notice annotation to the workflow summary |
+| `env` | boolean | `true` | Dump the `env` context |
+| `github` | boolean | `true` | Dump the `github` context |
+| `context_inputs` | boolean | `true` | Dump the `inputs` context |
+| `job` | boolean | `true` | Dump the `job` context |
+| `matrix` | boolean | `true` | Dump the `matrix` context |
+| `runner` | boolean | `true` | Dump the `runner` context |
+| `secrets` | boolean | `false` | Dump the `secrets` context (disabled by default to avoid exposure) |
+| `steps` | boolean | `true` | Dump the `steps` context |
+| `strategy` | boolean | `true` | Dump the `strategy` context |
+| `vars` | boolean | `true` | Dump the `vars` context |
+
+#### Usage Example
+
+```yaml
+steps:
+  - uses: ulfiac/commons/.github/actions/dump_context@main
+    with:
+      secrets: false
+```
 
 ## Contributing
 
