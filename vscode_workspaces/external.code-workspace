@@ -38,7 +38,11 @@
     //"terminal.integrated.cwd": "${fileDirname}",
     "terminal.integrated.scrollback": 9999,
     "terminal.integrated.suggest.enabled": true,
-    "terminal.integrated.suggest.quickSuggestions": true,
+    "terminal.integrated.suggest.quickSuggestions": {
+      "commands": "on",
+      "arguments": "on",
+      "unknown": "on"
+    },
     "terraform.languageServer.enable": true,
     "terraform.validation.enableEnhancedValidation": true,
     "workbench.startupEditor": "none",
