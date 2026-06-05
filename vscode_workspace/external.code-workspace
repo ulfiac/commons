@@ -1,0 +1,56 @@
+{
+  "folders": [
+    {
+      "path": "../../external"
+    }
+  ],
+  "settings": {
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.tabSize": 2,
+    "emeraldwalk.runonsave": {
+      "commands": [
+        {
+          "cmd": "terragrunt hcl format --file=${file}",
+          "isAsync": true,
+          "match": "\\.hcl$"
+        }
+      ]
+    },
+    "extensions.ignoreRecommendations": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "git.confirmSync": false,
+    "git.replaceTagsWhenPull": true,
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "json.format.enable": true,
+    "json.validate.enable": true,
+    "scm.alwaysShowRepositories": true,
+    "scm.repositories.selectionMode": "single",
+    //"scm.repositories.visible": 20,
+    //"terminal.integrated.cwd": "${fileDirname}",
+    "terminal.integrated.scrollback": 9999,
+    "terminal.integrated.suggest.enabled": true,
+    "terminal.integrated.suggest.quickSuggestions": true,
+    "terraform.languageServer.enable": true,
+    "terraform.validation.enableEnhancedValidation": true,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 20,
+  },
+  "extensions": {
+    "recommendations": [
+      "emeraldwalk.runonsave",
+      "github.copilot-chat",
+      "hashicorp.hcl",
+      "hashicorp.terraform",
+      "ms-vscode.powershell"
+    ]
+  }
+}
