@@ -12,10 +12,6 @@ on:
         default: true
         required: false
         type: boolean
-      terraform-docs:
-        default: false
-        required: false
-        type: boolean
       terraform-fmt:
         default: true
         required: false
@@ -41,10 +37,6 @@ on:
         type: boolean
       shellcheck:
         default: true
-        required: false
-        type: boolean
-      terraform-docs:
-        default: false
         required: false
         type: boolean
       terraform-fmt:
@@ -88,18 +80,6 @@ jobs:
       - uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # v2.0.0, released 2023-01, checked 2026-03
         with:
           scandir: .
-
-  # terraform docs linter
-  terraform-docs:
-    if: ${{ inputs.terraform-docs }}
-    runs-on: ubuntu-latest
-    steps:
-      - *checkout_action
-      - uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1, released 2025-05, checked 2026-03
-        with:
-          args: --anchor=false
-          fail-on-diff: true
-          find-dir: terraform/modules
 
   # terraform syntax linter
   terraform-fmt:
