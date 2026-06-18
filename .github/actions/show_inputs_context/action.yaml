@@ -7,6 +7,7 @@ runs:
     - name: show inputs context
       shell: bash
       run: |
+        echo -e "Dumping context...\n"
         echo "::group::Inputs Context"
         echo "{{ toJson(inputs) }}" | jq -S .
         echo "::endgroup::"
