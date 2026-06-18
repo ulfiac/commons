@@ -1,0 +1,12 @@
+name: show-inputs-context
+description: Show the inputs context of a GitHub Actions workflow run.
+
+runs:
+  using: "composite"
+  steps:
+    - name: show inputs context
+      shell: bash
+      run: |
+        echo "::group::Inputs Context"
+        echo "{{ toJson(inputs) }}" | jq -S .
+        echo "::endgroup::"
