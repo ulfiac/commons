@@ -9,5 +9,5 @@ runs:
       run: |
         echo -e "Dumping context...\n"
         echo "::group::Inputs Context"
-        echo "{{ toJson(inputs) }}" | jq -S .
+        echo "{{ toJson(inputs) }}"
         echo "::endgroup::"
