@@ -25,4 +25,5 @@ jobs:
         with:
           args: --anchor=false
           find-dir: ${{ inputs.find-dir }}
+          git-commit-message: "terraform-docs: automated update [skip ci]"
           git-push: true
