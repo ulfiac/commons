@@ -87,11 +87,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: hashicorp/setup-terraform@5e8dbf3c6d9deaf4193ca7a8fb23f2ac83bb6c85 # v4.0.0, released 2026-02, checked 2026-03
+      - uses: docker://ghcr.io/ulfiac/terraform-fmt@sha256:4205a55ad2e855e4d7d96f88ad51a6f5bf9514ed2134731582ff1ab316fe0d5e # v1.15.6
         with:
-          terraform_wrapper: false
-      - run: terraform --version
-      - run: terraform fmt -check -diff -recursive .
+          args: -check -diff -recursive .
 
   # hcl syntax linter
   terragrunt-hcl-fmt:
