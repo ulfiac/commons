@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - &checkout_action
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2, released 2026-01, checked 2026-03
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: docker://rhysd/actionlint:1.7.10 # v1.7.10, released 2026-01
         with:
           args: -color
@@ -77,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # v2.0.0, released 2023-01, checked 2026-03
+      - uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # v2.0.0
         with:
           scandir: .
 
@@ -107,12 +107,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: terraform-linters/tflint-load-config-action@32d9f74138340b95873e956fbdfc390db819bff1 # v3.0.0, released 2026-03, checked 2026-03
+      - uses: terraform-linters/tflint-load-config-action@32d9f74138340b95873e956fbdfc390db819bff1 # v3.0.0
         with:
           source-repo: ulfiac/commons
           source-path: .tflint.hcl
           source-ref: main
-      - uses: terraform-linters/setup-tflint@b480b8fcdaa6f2c577f8e4fa799e89e756bb7c93 # v6.2.2, released 2026-03, checked 2026-03
+      - uses: terraform-linters/setup-tflint@b480b8fcdaa6f2c577f8e4fa799e89e756bb7c93 # v6.2.2
       - run: tflint --version
       - run: tflint --init
       - run: tflint --version
@@ -124,6 +124,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514 # v0.2.6, released 2026-03, checked 2026-03
+      - uses: aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514 # v0.2.6
       - run: trivy --version
       - run: trivy config --exit-code 1 .
