@@ -124,6 +124,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: aquasecurity/setup-trivy@81e514348e19b6112ce2a7e3ecbafe19c1e1f567 # v0.3.1
-      - run: trivy --version
-      - run: trivy config --exit-code 1 .
+      - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: config
+          scan-ref: .
+          exit-code: '1'
