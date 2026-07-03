@@ -31,6 +31,9 @@
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
     "github.copilot.nextEditSuggestions.enabled": true,
     "json.format.enable": true,
+    "json.schemaDownload.trustedHosts": [
+      "docs.renovatebot.com"
+    ],
     "json.validate.enable": true,
     "scm.alwaysShowRepositories": true,
     "scm.repositories.selectionMode": "single",
