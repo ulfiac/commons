@@ -67,7 +67,7 @@ jobs:
     steps:
       - &checkout_action
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      - uses: docker://rhysd/actionlint:1.7.10 # v1.7.10, released 2026-01
+      - uses: docker://rhysd/actionlint:1.7.12 # v1.7.10, released 2026-01
         with:
           args: -color
 
