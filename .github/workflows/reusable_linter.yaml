@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: docker://ghcr.io/ulfiac/terragrunt-hcl-fmt:1.1.0@sha256:6d358378adb89f0434fb4ec2ffeac3ea186341c56a9d0ec73a299fe5624a70ab
+      - uses: docker://ghcr.io/ulfiac/terragrunt-hcl-fmt:1.1.0@sha256:67ac0c4d16d4163455195eb4282e2b3814fbdd0d0e3586578be2553cf7761df7
         with:
           args: --check --diff .
 
