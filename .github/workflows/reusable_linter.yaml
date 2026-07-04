@@ -107,16 +107,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: terraform-linters/tflint-load-config-action@32d9f74138340b95873e956fbdfc390db819bff1 # v3.0.0
+      - uses: docker://ghcr.io/ulfiac/tflint:0.63.1@sha256:162634cf0f26a6d4200fa9e17e7ac130eecf61363f8fb5e7e04992ae8a3a3cc2
         with:
-          source-repo: ulfiac/commons
-          source-path: .tflint.hcl
-          source-ref: main
-      - uses: terraform-linters/setup-tflint@6e1e0642c0289bd619021bf6b34e3c08ed1e005a # v6.3.0
-      - run: tflint --version
-      - run: tflint --init
-      - run: tflint --version
-      - run: tflint --recursive --color
+          args: --recursive --color
 
   # security scanner
   trivy-config:
