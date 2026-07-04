@@ -107,7 +107,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - *checkout_action
-      - uses: docker://ghcr.io/ulfiac/tflint:0.63.1@sha256:2084327e2d7b1e9060eb990cea017fe9b7cd86415e997e03a221632889cdd909
+      - uses: docker://ghcr.io/ulfiac/tflint:0.63.1@sha256:1bcd0677127952444077bf10d15516eb8396322811b051597410d0a9d25dfdba
         with:
           args: --recursive --color
 
