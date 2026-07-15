@@ -2,47 +2,22 @@ name: reusable-purge-workflow-logs
 
 on:
   workflow_call:
-    inputs:
-      retain-days:
-        default: 7
-        required: false
-        type: number
   workflow_dispatch:
-    inputs:
-      retain-days:
-        default: 7
-        required: false
-        type: number
 
 permissions:
-  contents: read
   actions: write
+  contents: read
 
 jobs:
   purge-workflow-logs:
     runs-on: ubuntu-latest
     steps:
       - name: purge workflow logs
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          # Calculate the cutoff date
-          cutoff_date=$(date -u -d "${{ inputs.retain-days }} days ago" +%Y-%m-%d)
-          echo "Purging workflow runs older than ${cutoff_date}"
-
-          # Get repository information
-          repo="${{ github.repository }}"
-
-          # List all workflow runs older than retention period and delete them
-          gh run list \
-            --repo "$repo" \
-            --limit 1000 \
-            --json databaseId,createdAt,workflowName,status \
-            --jq ".[] | select(.createdAt < \"${cutoff_date}\") | .databaseId" \
-            | while read -r run_id; do
-              if [ -n "$run_id" ]; then
-                if ! gh run delete "$run_id" --repo "$repo"; then
-                  echo "Failed to delete workflow run ID ${run_id} in repository ${repo}" >&2
-                fi
-              fi
-          done
+        uses: Mattraks/delete-workflow-runs@b3018382ca039b53d238908238bd35d1fb14f8ee # v2.1.0
+        with:
+          check_branch_existence: true
+          check_pullrequest_exist: true
+          keep_minimum_runs: 3
+          repository: ${{ github.repository }}
+          retain_days: 7
+          token: ${{ github.token }}
