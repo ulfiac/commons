@@ -15,7 +15,6 @@ jobs:
       - name: purge workflow logs
         uses: Mattraks/delete-workflow-runs@b3018382ca039b53d238908238bd35d1fb14f8ee # v2.1.0
         with:
-          check_branch_existence: true
           check_pullrequest_exist: true
           keep_minimum_runs: 3
           repository: ${{ github.repository }}
