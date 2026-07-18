@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   purge-workflow-logs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: purge workflow logs
         uses: Mattraks/delete-workflow-runs@b3018382ca039b53d238908238bd35d1fb14f8ee # v2.1.0
