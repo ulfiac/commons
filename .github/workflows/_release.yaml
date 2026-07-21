@@ -41,9 +41,11 @@ jobs:
             latest_tag="v0.0.0"
           fi
 
-          version="${latest_tag#v}"
-          major="${version%%.*}"
-          rest="${version#*.}"
+          version="${latest_tag#v}"        # e.g. 1.2.3+abc1234
+          core_version="${version%%+*}"    # e.g. 1.2.3 (or unchanged if no + is present)
+
+          major="${core_version%%.*}"
+          rest="${core_version#*.}"
           minor="${rest%%.*}"
           patch="${rest#*.}"
 
@@ -67,7 +69,9 @@ jobs:
               ;;
           esac
 
-          new_tag="v${major}.${minor}.${patch}"
+          short_sha="${GITHUB_SHA:0:7}"
+
+          new_tag="v${major}.${minor}.${patch}+${short_sha}"
           echo "previous tag: ${latest_tag}, new tag: ${new_tag}"
           echo "new_tag=${new_tag}" >> "$GITHUB_OUTPUT"
 
