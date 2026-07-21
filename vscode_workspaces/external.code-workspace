@@ -26,6 +26,7 @@
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "git.autofetch": true,
     "git.confirmSync": false,
     "git.replaceTagsWhenPull": true,
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
