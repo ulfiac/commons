@@ -27,6 +27,14 @@
       "schedule": [
         "before 9am on monday"
       ]
+    },
+    {
+      "groupName": "container packages",
+      "matchPackagePatterns": [
+        "ghcr.io/ulfiac/terraform-fmt",
+        "ghcr.io/ulfiac/terragrunt-hcl-fmt",
+        "ghcr.io/ulfiac/tflint"
+      ]
     }
   ],
   "prHourlyLimit": 5,
