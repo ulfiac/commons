@@ -1,4 +1,5 @@
 name: _release
+run-name: "release: ${{ github.event_name == 'workflow_dispatch' && format('manual bump ({0})', github.event.inputs.bump) || github.event.head_commit.message }}"
 
 on:
   push:
