@@ -1,7 +1,48 @@
 {
   "folders": [
     {
-      "path": "../../../external"
+      "name": "antonputra/tutorials",
+      "path": "../../../external/antonputra/tutorials"
+    },
+    {
+      "name": "aws-ia/terraform-aws-vpc",
+      "path": "../../../external/aws-ia/terraform-aws-vpc"
+    },
+    {
+      "name": "cloudposse/terraform-aws-vpc",
+      "path": "../../../external/cloudposse/terraform-aws-vpc"
+    },
+    {
+      "name": "gruntwork-io/archive/terragrunt-infrastructure-live-example",
+      "path": "../../../external/gruntwork-io/archive/terragrunt-infrastructure-live-example"
+    },
+    {
+      "name": "gruntwork-io/archive/terragrunt-infrastructure-modules-example",
+      "path": "../../../external/gruntwork-io/archive/terragrunt-infrastructure-modules-example"
+    },
+    {
+      "name": "gruntwork-io/terragrunt-infrastructure-catalog-example",
+      "path": "../../../external/gruntwork-io/terragrunt-infrastructure-catalog-example"
+    },
+    {
+      "name": "gruntwork-io/terragrunt-infrastructure-live-stacks-example",
+      "path": "../../../external/gruntwork-io/terragrunt-infrastructure-live-stacks-example"
+    },
+    {
+      "name": "nigelpoulten/getting-started-k8s",
+      "path": "../../../external/nigelpoulten/getting-started-k8s"
+    },
+    {
+      "name": "sixeyed/diamol",
+      "path": "../../../external/sixeyed/diamol"
+    },
+    {
+      "name": "terraform-aws-modules/terraform-aws-eks",
+      "path": "../../../external/terraform-aws-modules/terraform-aws-eks"
+    },
+    {
+      "name": "terraform-aws-modules/terraform-aws-vpc",
+      "path": "../../../external/terraform-aws-modules/terraform-aws-vpc"
     }
   ],
   "settings": {
