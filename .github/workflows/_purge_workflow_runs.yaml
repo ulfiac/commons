@@ -1,4 +1,4 @@
-name: _purge
+name: _purge_workflow_runs
 
 on:
   schedule:
@@ -10,5 +10,5 @@ permissions:
   contents: read
 
 jobs:
-  purge-logs:
-    uses: ./.github/workflows/reusable_purge_workflow_logs.yaml
+  purge-workflow-runs:
+    uses: ./.github/workflows/reusable_purge_workflow_runs.yaml
