@@ -1,0 +1,21 @@
+name: reusable-purge-workflow-runs
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  purge-workflow-runs:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: purge workflow runs
+        uses: Mattraks/delete-workflow-runs@b3018382ca039b53d238908238bd35d1fb14f8ee # v2.1.0
+        with:
+          keep_minimum_runs: 0
+          repository: ${{ github.repository }}
+          retain_days: 5
+          token: ${{ github.token }}
