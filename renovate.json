@@ -29,7 +29,6 @@
       ]
     },
     {
-      "automerge": true,
       "groupName": "container packages",
       "matchPackagePatterns": [
         "ghcr.io/ulfiac/terraform-fmt",
