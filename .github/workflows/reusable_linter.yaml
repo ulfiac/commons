@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - *checkout_action
-      - uses: docker://ghcr.io/ulfiac/terraform-fmt:1.15.9@sha256:7fb89f1a8f37ffa6557baca317d992032e7d6d542e28848d6f4825a5320fd140
+      - uses: docker://ghcr.io/ulfiac/terraform-fmt:1.15.9@sha256:b9c896446a4b5d39e1c2f0e8a5218d206acdf92c3ba395695a46b0d965be8b0c
         with:
           args: -check -diff -recursive .
 
