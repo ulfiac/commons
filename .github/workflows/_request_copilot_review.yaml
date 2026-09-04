@@ -1,0 +1,15 @@
+name: _request_copilot_review
+run-name: "_request_copilot_review: ${{ github.event.pull_request.title }}"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+permissions:
+  pull-requests: write
+
+jobs:
+  reusable-request-copilot-review:
+    uses: ./.github/workflows/reusable_request_copilot_review.yaml
