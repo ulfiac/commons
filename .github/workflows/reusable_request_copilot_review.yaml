@@ -3,6 +3,9 @@ run-name: "reusable request copilot review: ${{ github.event.pull_request.title 
 
 on:
   workflow_call:
+    secrets:
+      PAT_REQUEST_COPILOT_REVIEW:
+        required: true
 
 permissions:
   pull-requests: write
@@ -14,6 +17,6 @@ jobs:
     steps:
       - name: request copilot review
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT_REQUEST_COPILOT_REVIEW }}
           GH_REPO: ${{ github.repository }}
         run: gh pr edit "${{ github.event.pull_request.number }}" --add-reviewer @copilot
