@@ -7,8 +7,7 @@ on:
       PAT_REQUEST_COPILOT_REVIEW:
         required: true
 
-permissions:
-  pull-requests: write
+permissions: {}
 
 jobs:
   request-copilot-review:
