@@ -24,9 +24,6 @@
         "terraform-docs/gh-actions"
       ],
       "minimumReleaseAge": "7 days",
-      "reviewers": [
-        "ulfiac"
-      ],
       "schedule": [
         "before 9am on monday"
       ]
