@@ -8,6 +8,10 @@ on:
       - reopened
       - synchronize
 
+concurrency:
+  group: request-copilot-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 permissions:
   pull-requests: write
 
