@@ -55,10 +55,8 @@
   "extensions": {
     "recommendations": [
       "emeraldwalk.runonsave",
-      "github.copilot-chat",
       "hashicorp.hcl",
-      "hashicorp.terraform",
-      "ms-vscode.powershell"
+      "hashicorp.terraform"
     ]
   }
 }
