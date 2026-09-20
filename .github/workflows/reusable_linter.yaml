@@ -63,7 +63,7 @@ jobs:
   # github action workflow linter
   actionlint:
     if: ${{ inputs.actionlint }}
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - &checkout_action
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -74,7 +74,7 @@ jobs:
   # shell script linter
   shellcheck:
     if: ${{ inputs.shellcheck }}
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - *checkout_action
       - uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
@@ -84,7 +84,7 @@ jobs:
   # terraform syntax linter
   terraform-fmt:
     if: ${{ inputs.terraform-fmt }}
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - *checkout_action
       - uses: docker://ghcr.io/ulfiac/terraform-fmt:1.16.1@sha256:c6c7735b0842e5e996602b6d2cdef7877c7763c43232b076fa4a194727f432fa
@@ -94,7 +94,7 @@ jobs:
   # hcl syntax linter
   terragrunt-hcl-fmt:
     if: ${{ inputs.terragrunt-hcl-fmt }}
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - *checkout_action
       - uses: docker://ghcr.io/ulfiac/terragrunt-hcl-fmt:1.1.4@sha256:02c66995bf11f70a532ba1329ee4a2064f3786bbf1ae0b17beb7b61f7858452e
@@ -104,7 +104,7 @@ jobs:
   # terraform linter
   tflint:
     if: ${{ inputs.tflint }}
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - *checkout_action
       - uses: docker://ghcr.io/ulfiac/tflint:0.64.0@sha256:40badbe484b5f85a498066a14b3895594d46f319df83459d5d434b7ce5322684
@@ -114,7 +114,7 @@ jobs:
   # security scanner
   trivy-config:
     if: ${{ inputs.trivy-config }}
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - *checkout_action
       - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0

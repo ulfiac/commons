@@ -12,7 +12,7 @@ permissions: {}
 jobs:
   request-copilot-review:
     if: github.event.pull_request.user.type == 'Bot'
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - name: request copilot review
         env:
