@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - *checkout_action
-      - uses: docker://ghcr.io/ulfiac/terraform-fmt:1.16.1@sha256:c6c7735b0842e5e996602b6d2cdef7877c7763c43232b076fa4a194727f432fa
+      - uses: docker://ghcr.io/ulfiac/terraform-fmt:1.16.1@sha256:e466547f7ea3a5ce4b5739349613cb7bd4dfd125c50b0830675af95503847d19
         with:
           args: -check -diff -recursive .
 
@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - *checkout_action
-      - uses: docker://ghcr.io/ulfiac/terragrunt-hcl-fmt:1.1.4@sha256:02c66995bf11f70a532ba1329ee4a2064f3786bbf1ae0b17beb7b61f7858452e
+      - uses: docker://ghcr.io/ulfiac/terragrunt-hcl-fmt:1.1.4@sha256:2e4626abd00c2f40aa5168e8ab218a39082a3114c229af04dcade715bec621e8
         with:
           args: --check --diff .
 
@@ -107,7 +107,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - *checkout_action
-      - uses: docker://ghcr.io/ulfiac/tflint:0.64.0@sha256:40badbe484b5f85a498066a14b3895594d46f319df83459d5d434b7ce5322684
+      - uses: docker://ghcr.io/ulfiac/tflint:0.64.0@sha256:8fe32b9241305de69938182dba43cbc588631ba8d7e61e6ffa0c15e5a31215f7
         with:
           args: --recursive --color
 
