@@ -1,0 +1,11 @@
+{
+  "platform": "github",
+  "repositories": [
+    "ulfiac/aws-bootstrap",
+    "ulfiac/commons",
+    "ulfiac/containers",
+    "ulfiac/infra"
+  ],
+  "onboarding": false,
+  "requireConfig": "optional"
+}
