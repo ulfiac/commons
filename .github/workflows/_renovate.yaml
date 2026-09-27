@@ -1,0 +1,37 @@
+name: _renovate
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+concurrency:
+  group: renovate
+  cancel-in-progress: true
+
+jobs:
+  renovate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: get github app token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: app-token
+        with:
+          client-id: ${{ secrets.RENOVATE_BOT_APP_CLIENT_ID }}
+          owner: ${{ github.repository_owner }}
+          private-key: ${{ secrets.RENOVATE_BOT_APP_PRIVATE_KEY }}
+
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: install renovate
+        run: |
+          npm install -g renovate
+
+      - name: run renovate
+        env:
+          RENOVATE_CONFIG_FILE: ${{ github.workspace }}/.github/renovate/renovate-global-config.json
+          RENOVATE_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          renovate
