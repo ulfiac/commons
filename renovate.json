@@ -17,6 +17,8 @@
         "ludeeus/action-shellcheck",
         "Mattraks/delete-workflow-runs",
         "peter-evans/create-pull-request",
+        "renovate/renovate",
+        "renovatebot/github-action",
         "rhysd/actionlint",
         "terraform-docs/gh-actions"
       ],

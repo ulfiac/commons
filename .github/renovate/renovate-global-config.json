@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
+  "configValidationError": true,
+  "onboarding": false,
+  "platform": "github",
+  "repositories": [
+    "ulfiac/aws-bootstrap",
+    "ulfiac/commons",
+    "ulfiac/containers",
+    "ulfiac/infra"
+  ],
+  "requireConfig": "required"
+}
