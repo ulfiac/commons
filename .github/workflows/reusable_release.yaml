@@ -81,17 +81,9 @@ jobs:
             --title "$NEW_TAG" \
             --generate-notes
 
-      - name: get github app token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        id: app-token
-        with:
-          client-id: ${{ secrets.ACTIONS_BOT_APP_CLIENT_ID }}
-          permission-actions: write
-          private-key: ${{ secrets.ACTIONS_BOT_APP_PRIVATE_KEY }}
-
-      - name: trigger renovate workflow
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: |
-          set -euo pipefail
-          gh workflow run _renovate.yaml --repo ${{ github.repository }} --ref ${{ github.ref_name }} -f dry-run=none -f log-level=info
+  trigger-renovate:
+    uses: ./.github/workflows/reusable_trigger_renovate.yaml
+    needs: release
+    secrets:
+      ACTIONS_BOT_APP_CLIENT_ID: ${{ secrets.ACTIONS_BOT_APP_CLIENT_ID }}
+      ACTIONS_BOT_APP_PRIVATE_KEY: ${{ secrets.ACTIONS_BOT_APP_PRIVATE_KEY }}
