@@ -2,8 +2,7 @@ name: _renovate
 
 on:
   schedule:
-    - cron: '53 * * * 1' # every hour on minute 53 on Monday
-    - cron: '53 */4 * * 0,2-6' # every 4 hours on minute 53 on Tuesday to Sunday
+    - cron: '53 */4 * * *' # every 4 hours every day on minute 53
   workflow_dispatch:
     inputs:
       dry-run:
