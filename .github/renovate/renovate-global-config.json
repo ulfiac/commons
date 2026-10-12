@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
   "configValidationError": true,
+  "dockerMaxPages": 10,
   "onboarding": false,
   "platform": "github",
   "repositories": [
