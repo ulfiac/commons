@@ -10,6 +10,7 @@
   "packageRules": [
     {
       "groupName": "Monday packages",
+      "groupSingleUpdates": true,
       "matchPackageNames": [
         "actions/checkout",
         "actions/create-github-app-token",
@@ -33,6 +34,7 @@
     {
       "automerge": true,
       "groupName": "container packages",
+      "groupSingleUpdates": true,
       "matchPackageNames": [
         "ghcr.io/ulfiac/terraform-fmt",
         "ghcr.io/ulfiac/terragrunt-hcl-fmt",
