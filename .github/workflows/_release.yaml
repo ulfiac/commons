@@ -27,3 +27,6 @@ jobs:
     uses: ./.github/workflows/reusable_release.yaml
     with:
       bump: ${{ github.event.inputs.bump || 'patch' }}
+    secrets:
+      ACTIONS_BOT_APP_CLIENT_ID: ${{ secrets.ACTIONS_BOT_APP_CLIENT_ID }}
+      ACTIONS_BOT_APP_PRIVATE_KEY: ${{ secrets.ACTIONS_BOT_APP_PRIVATE_KEY }}
