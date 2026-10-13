@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
   "branchPrefix": "ulfiac-renovate/",
   "configValidationError": true,
-  "dependencyDashboard": false,
   "dockerMaxPages": 10,
   "onboarding": false,
   "platform": "github",
