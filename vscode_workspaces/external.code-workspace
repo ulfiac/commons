@@ -5,6 +5,10 @@
       "path": "../../../external/antonputra/tutorials"
     },
     {
+      "name": "aws-ia/terraform-aws-eks-blueprints",
+      "path": "../../../external/aws-ia/terraform-aws-eks-blueprints"
+    },
+    {
       "name": "aws-ia/terraform-aws-vpc",
       "path": "../../../external/aws-ia/terraform-aws-vpc"
     },
