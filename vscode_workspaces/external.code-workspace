@@ -41,6 +41,10 @@
       "path": "../../../external/sixeyed/diamol"
     },
     {
+      "name": "sunilnerella23/terraform-eks-cluster-create",
+      "path": "../../../external/sunilnerella23/terraform-eks-cluster-create"
+    },
+    {
       "name": "terraform-aws-modules/terraform-aws-eks",
       "path": "../../../external/terraform-aws-modules/terraform-aws-eks"
     },
