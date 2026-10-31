@@ -33,6 +33,14 @@
       "path": "../../../external/gruntwork-io/terragrunt-infrastructure-live-stacks-example"
     },
     {
+      "name": "mvtech88/infrastucture-aws",
+      "path": "../../../external/mvtech88/infrastucture-aws"
+    },
+    {
+      "name": "mvtech88/infrastucture-modules",
+      "path": "../../../external/mvtech88/infrastucture-modules"
+    },
+    {
       "name": "nigelpoulten/getting-started-k8s",
       "path": "../../../external/nigelpoulten/getting-started-k8s"
     },
