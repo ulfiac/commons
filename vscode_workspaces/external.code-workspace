@@ -9,6 +9,10 @@
       "path": "../../../external/aws-ia/terraform-aws-eks-blueprints"
     },
     {
+      "name": "aws-ia/terraform-aws-eks-blueprints-addons",
+      "path": "../../../external/aws-ia/terraform-aws-eks-blueprints-addons"
+    },
+    {
       "name": "aws-ia/terraform-aws-vpc",
       "path": "../../../external/aws-ia/terraform-aws-vpc"
     },
