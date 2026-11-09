@@ -14,6 +14,8 @@ jobs:
     if: github.event.pull_request.user.type == 'Bot'
     runs-on: ubuntu-26.04
     steps:
+      - run: sleep 10 # give renovate time to update the PR description
+
       - name: request copilot review
         env:
           GH_TOKEN: ${{ secrets.PAT_REQUEST_COPILOT_REVIEW }}
