@@ -19,7 +19,6 @@
         "ludeeus/action-shellcheck",
         "Mattraks/delete-workflow-runs",
         "peter-evans/create-pull-request",
-        "renovate/renovate",
         "renovatebot/github-action",
         "rhysd/actionlint",
         "terraform-docs/gh-actions"
@@ -40,6 +39,21 @@
         "ghcr.io/ulfiac/terraform-fmt",
         "ghcr.io/ulfiac/terragrunt-hcl-fmt",
         "ghcr.io/ulfiac/tflint"
+      ]
+    },
+    {
+      "automerge": true,
+      "groupName": "renovate",
+      "groupSingleUpdates": true,
+      "matchPackageNames": [
+        "renovate/renovate"
+      ],
+      "minimumReleaseAge": "7 days",
+      "reviewers": [
+        "ulfiac"
+      ],
+      "schedule": [
+        "before 9am on monday"
       ]
     }
   ],
