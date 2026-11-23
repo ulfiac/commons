@@ -10,7 +10,7 @@
   ],
   "packageRules": [
     {
-      "groupName": "Monday packages (3 of 4)",
+      "groupName": "Monday packages",
       "groupSingleUpdates": true,
       "matchPackageNames": [
         "actions/checkout",
@@ -33,7 +33,7 @@
     },
     {
       "automerge": true,
-      "groupName": "container(s) in containers repo (3 of 3)",
+      "groupName": "containers packages",
       "groupSingleUpdates": true,
       "matchPackageNames": [
         "ghcr.io/ulfiac/terraform-fmt",
